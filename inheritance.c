@@ -15,8 +15,9 @@
 
 #include "rect.h"
 
-#define ENABLE_THIS_MAIN  ( 1 )
+#define ENABLE_THIS_FILE  ( 0 )
 
+#if ENABLE_THIS_FILE
 void rectangle_ctor(rectangle_t *const this_p, int16_t x, int16_t y, uint16_t width, uint16_t height)
 {
 	// First call constructor of super class / base class shape
@@ -27,7 +28,7 @@ void rectangle_ctor(rectangle_t *const this_p, int16_t x, int16_t y, uint16_t wi
 	this_p->height = height;
 }
 
-#if ENABLE_THIS_MAIN
+
 int main(void)
 {
 	rectangle_t rectang1, rectang2;

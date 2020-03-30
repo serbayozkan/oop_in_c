@@ -1,0 +1,19 @@
+/*
+ * Virtual function call cannot be resolved link-time. So instead the binding between the
+ * invocation of a virtual function and the actual implementation must happen at run time
+ * which is called late binding(as opposed to the link-time binding, which is also called
+ * early binding)
+ *
+ * Practically all C++ compilers implement late binding by means of one Virtual Table(vtbl) per class
+ * and a Virtual Pointer (vptr) per each object. This method can be applied to C as well.
+ *
+ * Virtual Table is a table of function pointers corresponding to the virtual functions introduced
+ * by a class. In C, a Virtual Table can be emulated by a structure to pointer of functions.
+ *
+ * vptr is declared as pointer to an immutable object (see the const keyword in front of the *),
+ * because the Virtual Table should not be changed and is, in fact, allocated in ROM
+ *
+ * The Virtual Pointer (vptr) is inherited by all subclasses, so the vptr of the shape_t class
+ * will be automatically available in all its subclasses, such as rectangle_t and circle_t etc.
+ */
+ 
